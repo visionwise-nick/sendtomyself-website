@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Send To Myself</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,227 +13,388 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: white;
-            min-height: 100vh;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Content */
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 4rem;
+            margin-top: 100px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
             border-bottom: 2px solid #667eea;
         }
         
         h1 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
         
         .back-link {
-            display: inline-block;
-            margin: 20px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s ease;
         }
         
         .back-link:hover {
-            text-decoration: underline;
+            transform: translateX(-5px);
         }
         
         h2 {
             color: #667eea;
-            margin: 30px 0 15px 0;
-            font-size: 1.5rem;
+            margin: 3rem 0 1.5rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
         
         h3 {
-            color: #555;
-            margin: 20px 0 10px 0;
-            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
         
         p, ul {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
+            color: #333;
+            line-height: 1.8;
         }
         
         ul {
-            padding-left: 20px;
+            padding-left: 2rem;
         }
         
         li {
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
         }
         
         .contact {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border: 1px solid rgba(102, 126, 234, 0.1);
         }
         
-        footer {
+        .contact h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .contact a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact a:hover {
+            color: #5a6fd8;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px 20px 0 0;
+            padding: 2rem;
+            margin-top: 4rem;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #5a6fd8;
+        }
+        
+        .copyright {
             color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem;
+                margin-top: 80px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Send To Myself</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#download">Download</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1>Privacy Policy for Send To Myself</h1>
-            <p><strong>Last updated:</strong> December 2024</p>
-            <a href="index.html" class="back-link">← Back to Home</a>
-        </header>
-        
-        <h2>Introduction</h2>
-        <p>Send To Myself ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our cross-device file sharing and message memory assistant application.</p>
-        
-        <h2>Information We Collect</h2>
-        
-        <h3>Device Information</h3>
-        <ul>
-            <li>Device ID and type</li>
-            <li>Operating system version</li>
-            <li>App version and usage statistics</li>
-        </ul>
-        
-        <h3>User Content</h3>
-        <ul>
-            <li>Files, images, videos, and documents you choose to share</li>
-            <li>Text messages and chat history</li>
-            <li>Group information and member lists</li>
-        </ul>
-        
-        <h3>Technical Data</h3>
-        <ul>
-            <li>Network connection information</li>
-            <li>App performance and crash data</li>
-            <li>Usage analytics to improve our service</li>
-        </ul>
-        
-        <h2>How We Use Your Information</h2>
-        
-        <h3>Service Provision</h3>
-        <ul>
-            <li>Enable cross-device file transfer</li>
-            <li>Synchronize messages between your devices</li>
-            <li>Manage group functionality</li>
-            <li>Provide memory management features</li>
-        </ul>
-        
-        <h3>Service Improvement</h3>
-        <ul>
-            <li>Analyze app usage patterns</li>
-            <li>Fix bugs and improve performance</li>
-            <li>Develop new features</li>
-        </ul>
-        
-        <h3>Security</h3>
-        <ul>
-            <li>Prevent fraud and abuse</li>
-            <li>Ensure service reliability</li>
-            <li>Protect user data</li>
-        </ul>
-        
-        <h2>Data Storage and Security</h2>
-        
-        <h3>Local Storage</h3>
-        <p>Files and messages are stored locally on your devices. We do not permanently store your content on our servers.</p>
-        
-        <h3>Temporary Server Storage</h3>
-        <ul>
-            <li>Files are temporarily stored during transfer between devices</li>
-            <li>Messages are cached for synchronization purposes</li>
-            <li>All data is automatically deleted after successful transfer</li>
-        </ul>
-        
-        <h3>Security Measures</h3>
-        <ul>
-            <li>End-to-end encryption for file transfers</li>
-            <li>Secure WebSocket connections</li>
-            <li>Regular security audits</li>
-        </ul>
-        
-        <h2>Data Sharing</h2>
-        <p>We do not sell, trade, or otherwise transfer your personal information to third parties, except:</p>
-        <ul>
-            <li>When required by law</li>
-            <li>To protect our rights and safety</li>
-            <li>With your explicit consent</li>
-        </ul>
-        
-        <h2>Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li>Access your personal data</li>
-            <li>Request deletion of your data</li>
-            <li>Opt out of data collection</li>
-            <li>Contact us with privacy concerns</li>
-        </ul>
-        
-        <h2>Children's Privacy</h2>
-        <p>Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
-        
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-        
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <div class="content">
+            <header>
+                <h1>Privacy Policy for Send To Myself</h1>
+                <p><strong>Last updated:</strong> December 2024</p>
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </header>
+            
+            <h2>Introduction</h2>
+            <p>Send To Myself ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our cross-device file sharing and message memory assistant application.</p>
+            
+            <h2>Information We Collect</h2>
+            
+            <h3>Device Information</h3>
             <ul>
-                <li>Email: privacy@sendtomyself.app</li>
-                <li>Website: <a href="index.html">https://sendtomyself.app</a></li>
+                <li>Device ID and type</li>
+                <li>Operating system version</li>
+                <li>App version and usage statistics</li>
+            </ul>
+            
+            <h3>User Content</h3>
+            <ul>
+                <li>Files, images, videos, and documents you choose to share</li>
+                <li>Text messages and chat history</li>
+                <li>Group information and member lists</li>
+            </ul>
+            
+            <h3>Technical Data</h3>
+            <ul>
+                <li>Network connection information</li>
+                <li>App performance and crash data</li>
+                <li>Usage analytics to improve our service</li>
+            </ul>
+            
+            <h2>How We Use Your Information</h2>
+            
+            <h3>Service Provision</h3>
+            <ul>
+                <li>Enable cross-device file transfer</li>
+                <li>Synchronize messages between your devices</li>
+                <li>Manage group functionality</li>
+                <li>Provide memory management features</li>
+            </ul>
+            
+            <h3>Service Improvement</h3>
+            <ul>
+                <li>Analyze app usage patterns</li>
+                <li>Fix bugs and improve performance</li>
+                <li>Develop new features</li>
+            </ul>
+            
+            <h3>Security</h3>
+            <ul>
+                <li>Prevent fraud and abuse</li>
+                <li>Ensure service reliability</li>
+                <li>Protect user data</li>
+            </ul>
+            
+            <h2>Data Storage and Security</h2>
+            
+            <h3>Local Storage</h3>
+            <p>Files and messages are stored locally on your devices. We do not permanently store your content on our servers.</p>
+            
+            <h3>Temporary Server Storage</h3>
+            <ul>
+                <li>Files are temporarily stored during transfer between devices</li>
+                <li>Messages are cached for synchronization purposes</li>
+                <li>All data is automatically deleted after successful transfer</li>
+            </ul>
+            
+            <h3>Security Measures</h3>
+            <ul>
+                <li>End-to-end encryption for file transfers</li>
+                <li>Secure WebSocket connections</li>
+                <li>Regular security audits</li>
+            </ul>
+            
+            <h2>Data Sharing</h2>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties, except:</p>
+            <ul>
+                <li>When required by law</li>
+                <li>To protect our rights and safety</li>
+                <li>With your explicit consent</li>
+            </ul>
+            
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Request deletion of your data</li>
+                <li>Opt out of data collection</li>
+                <li>Contact us with privacy concerns</li>
+            </ul>
+            
+            <h2>Children's Privacy</h2>
+            <p>Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+            
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <ul>
+                    <li>Email: <a href="mailto:xiongsl2013@gmail.com">xiongsl2013@gmail.com</a></li>
+                    <li>Developer: silong.xiong</li>
+                    <li>Website: <a href="index.html">https://visionwise-nick.github.io/sendtomyself-website</a></li>
+                </ul>
+            </div>
+            
+            <h2>Data Collection Summary</h2>
+            
+            <h3>Data We Collect</h3>
+            <ul>
+                <li>Device information for service functionality</li>
+                <li>User-generated content (files, messages) for cross-device transfer</li>
+                <li>Usage analytics for app improvement</li>
+            </ul>
+            
+            <h3>How We Use Data</h3>
+            <ul>
+                <li>Provide core file sharing and messaging services</li>
+                <li>Improve app performance and user experience</li>
+                <li>Ensure service security and reliability</li>
+            </ul>
+            
+            <h3>Data Retention</h3>
+            <ul>
+                <li>Local data: Stored on your devices</li>
+                <li>Server data: Automatically deleted after transfer</li>
+                <li>Analytics: Anonymized and retained for service improvement</li>
+            </ul>
+            
+            <h3>Third-Party Sharing</h3>
+            <ul>
+                <li>No data sold to third parties</li>
+                <li>No advertising partnerships</li>
+                <li>No analytics sharing with external parties</li>
             </ul>
         </div>
-        
-        <h2>Data Collection Summary</h2>
-        
-        <h3>Data We Collect</h3>
-        <ul>
-            <li>Device information for service functionality</li>
-            <li>User-generated content (files, messages) for cross-device transfer</li>
-            <li>Usage analytics for app improvement</li>
-        </ul>
-        
-        <h3>How We Use Data</h3>
-        <ul>
-            <li>Provide core file sharing and messaging services</li>
-            <li>Improve app performance and user experience</li>
-            <li>Ensure service security and reliability</li>
-        </ul>
-        
-        <h3>Data Retention</h3>
-        <ul>
-            <li>Local data: Stored on your devices</li>
-            <li>Server data: Automatically deleted after transfer</li>
-            <li>Analytics: Anonymized and retained for service improvement</li>
-        </ul>
-        
-        <h3>Third-Party Sharing</h3>
-        <ul>
-            <li>No data sold to third parties</li>
-            <li>No advertising partnerships</li>
-            <li>No analytics sharing with external parties</li>
-        </ul>
-        
-        <footer>
-            <p>&copy; 2024 Send To Myself. All rights reserved.</p>
-        </footer>
     </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:xiongsl2013@gmail.com">Contact</a>
+            <a href="https://github.com/visionwise-nick" target="_blank">GitHub</a>
+        </div>
+        <p class="copyright">&copy; 2024 Send To Myself. All rights reserved. Developed by silong.xiong</p>
+    </footer>
 </body>
 </html> 
