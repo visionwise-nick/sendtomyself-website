@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send To Myself - Cross-Device File Sharing & Memory Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .downloads {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 10px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #5a6fd8;
+        }
+        
+        .download-btn.macos {
+            background: #007AFF;
+        }
+        
+        .download-btn.macos:hover {
+            background: #0056CC;
+        }
+        
+        .download-btn.ios {
+            background: #34C759;
+        }
+        
+        .download-btn.ios:hover {
+            background: #28A745;
+        }
+        
+        .privacy-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .privacy-link a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .privacy-link a:hover {
+            opacity: 1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Send To Myself</h1>
+            <p class="subtitle">Cross-Device File Sharing & Memory Assistant</p>
+        </header>
+        
+        <div class="hero">
+            <h2>Transform Your File Sharing Experience</h2>
+            <p>Send To Myself is a powerful cross-device file transfer and message memory assistant designed for professionals and families who need reliable file synchronization across all their devices.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🚀 Cross-Device Transfer</h3>
+                <p>Seamlessly transfer files, images, videos, and documents between your iPhone, iPad, Mac, and other devices with just a few taps.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>💬 Smart Message Sync</h3>
+                <p>Real-time message synchronization ensures your conversations are always up-to-date across all your devices, never lose important information again.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🧠 Memory Management</h3>
+                <p>Intelligent memory features help you save and organize important information with AI-assisted categorization and search.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>👥 Group Collaboration</h3>
+                <p>Create groups to share files with family and friends, perfect for team projects and family photo sharing.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔒 Secure & Private</h3>
+                <p>End-to-end encryption protects your data, with local storage and automatic cleanup ensuring your privacy is always protected.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🌐 Offline Sync</h3>
+                <p>Work offline with confidence - your changes will automatically sync when you're back online.</p>
+            </div>
+        </div>
+        
+        <div class="downloads">
+            <h2>Download Send To Myself</h2>
+            <p>Available for iOS and macOS</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="downloads/SendToMyself-macOS.dmg" class="download-btn macos">
+                    📱 Download for macOS
+                </a>
+                <a href="https://apps.apple.com/app/send-to-myself/id1234567890" class="download-btn ios">
+                    🍎 Download on App Store
+                </a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 20px; color: #666;">
+                <strong>macOS Version:</strong> 1.1.0 | <strong>iOS Version:</strong> 1.1.0
+            </p>
+        </div>
+        
+        <div class="privacy-link">
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Send To Myself. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
