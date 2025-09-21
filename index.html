@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send To Myself - 跨设备文件共享与记忆助手</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #000000;
-            --secondary: #6b7280;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
+            --secondary: #666666;
+            --accent: #000000;
             --surface: #ffffff;
-            --surface-secondary: #f9fafb;
-            --border: #e5e7eb;
-            --text-primary: #111827;
-            --text-secondary: #6b7280;
-            --text-muted: #9ca3af;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --radius: 12px;
-            --radius-lg: 16px;
-            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --surface-secondary: #fafafa;
+            --border: #e0e0e0;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.2s ease;
         }
 
         * {
@@ -58,7 +56,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -69,15 +67,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 72px;
+            height: 64px;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 600;
             color: var(--primary);
             text-decoration: none;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         .nav-links {
@@ -89,87 +87,71 @@
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
+            font-weight: 400;
+            font-size: 14px;
             transition: var(--transition);
-            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
         /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: var(--surface);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 24px;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 20px;
             color: var(--text-primary);
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
         .hero .subtitle {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             font-weight: 400;
             line-height: 1.5;
         }
 
         .hero .description {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 48px;
-            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 16px;
+            gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 64px;
+            margin-bottom: 60px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
+            gap: 6px;
+            padding: 12px 24px;
             border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 14px;
             text-decoration: none;
             transition: var(--transition);
-            border: none;
+            border: 1px solid var(--border);
             cursor: pointer;
             white-space: nowrap;
         }
@@ -177,59 +159,56 @@
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: var(--shadow-sm);
+            border-color: var(--primary);
         }
 
         .btn-primary:hover {
-            background: #1a1a1a;
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+            background: #333333;
+            border-color: #333333;
         }
 
         .btn-secondary {
             background: var(--surface);
             color: var(--text-primary);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
+            border-color: var(--border);
         }
 
         .btn-secondary:hover {
             background: var(--surface-secondary);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+            border-color: var(--text-secondary);
         }
 
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: var(--surface);
+            background: var(--surface-secondary);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 64px;
+            margin-bottom: 60px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
         }
 
         .section-subtitle {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
         }
 
         .feature {
@@ -238,62 +217,46 @@
             border-radius: var(--radius-lg);
             padding: 32px;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: var(--transition);
         }
 
         .feature:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent);
-        }
-
-        .feature:hover::before {
-            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--text-secondary);
         }
 
         .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            width: 40px;
+            height: 40px;
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
             border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin-bottom: 24px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
         }
 
         .feature h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             letter-spacing: -0.01em;
         }
 
         .feature p {
             color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 15px;
+            line-height: 1.5;
+            font-size: 14px;
         }
 
         /* Download Section */
         .downloads {
             padding: 80px 0;
-            background: var(--surface-secondary);
+            background: var(--surface);
         }
 
         .downloads-content {
@@ -304,8 +267,8 @@
 
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
             margin: 48px 0;
         }
 
@@ -313,62 +276,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
-            padding: 24px 20px;
+            gap: 8px;
+            padding: 24px 16px;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             text-decoration: none;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
-            transition: left 0.5s ease;
         }
 
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .download-btn:hover::before {
-            left: 100%;
+            box-shadow: var(--shadow-md);
+            border-color: var(--text-secondary);
         }
 
         .download-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
+            font-size: 24px;
+            margin-bottom: 4px;
+            color: var(--text-secondary);
         }
 
         .download-label {
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-primary);
-            font-size: 15px;
+            font-size: 14px;
             text-align: center;
         }
 
         .download-subtitle {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
             text-align: center;
         }
 
         .version-info {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
             margin-top: 32px;
             padding: 16px;
-            background: var(--surface);
+            background: var(--surface-secondary);
             border-radius: var(--radius);
             border: 1px solid var(--border);
             display: inline-block;
@@ -377,65 +324,67 @@
         /* Author Section */
         .author {
             padding: 80px 0;
-            background: var(--surface);
+            background: var(--surface-secondary);
             text-align: center;
         }
 
         .author-content {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .author h3 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: -0.01em;
         }
 
         .author p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.6;
+            margin-bottom: 24px;
+            line-height: 1.5;
         }
 
         .author-info {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             align-items: center;
         }
 
         .author-info a {
-            color: var(--accent);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 14px;
             transition: var(--transition);
         }
 
         .author-info a:hover {
-            color: var(--accent-hover);
+            color: var(--text-primary);
         }
 
         /* Footer */
         .footer {
             background: var(--text-primary);
             color: var(--text-muted);
-            padding: 48px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .footer-links {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
             margin: 0 16px;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 13px;
             transition: var(--transition);
         }
 
@@ -444,7 +393,7 @@
         }
 
         .copyright {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.7;
         }
 
@@ -464,12 +413,12 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 20px;
             }
 
             .download-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
 
             .cta-buttons {
@@ -479,7 +428,7 @@
 
             .btn {
                 width: 100%;
-                max-width: 280px;
+                max-width: 200px;
                 justify-content: center;
             }
         }
@@ -488,7 +437,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -499,7 +448,7 @@
         .hero-content,
         .feature,
         .download-btn {
-            animation: fadeInUp 0.6s ease-out;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .feature:nth-child(2) { animation-delay: 0.1s; }
@@ -507,37 +456,6 @@
         .feature:nth-child(4) { animation-delay: 0.3s; }
         .feature:nth-child(5) { animation-delay: 0.4s; }
         .feature:nth-child(6) { animation-delay: 0.5s; }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 24px;
-            height: 40px;
-            border: 2px solid var(--text-muted);
-            border-radius: 12px;
-            opacity: 0.6;
-        }
-
-        .scroll-indicator::before {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 8px;
-            background: var(--text-muted);
-            border-radius: 2px;
-            animation: scroll 2s infinite;
-        }
-
-        @keyframes scroll {
-            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-            50% { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
-        }
     </style>
 </head>
 <body>
@@ -563,13 +481,11 @@
                 <p class="subtitle">跨设备文件共享与记忆助手</p>
                 <p class="description">
                     无缝连接你的所有设备，安全高效地传输文件，智能管理你的数字记忆。
-                    为专业人士和家庭用户提供可靠的文件同步解决方案。
                 </p>
                 <div class="cta-buttons">
                     <a href="#download" class="btn btn-primary">立即下载</a>
                     <a href="#features" class="btn btn-secondary">了解更多</a>
                 </div>
-                <div class="scroll-indicator"></div>
             </div>
         </div>
     </section>
@@ -584,19 +500,19 @@
             
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon">→</div>
                     <h3>跨设备传输</h3>
-                    <p>在iPhone、iPad、Mac和其他设备间无缝传输文件、图片、视频和文档，只需轻点几下。</p>
+                    <p>在iPhone、iPad、Mac和其他设备间无缝传输文件、图片、视频和文档。</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon">💬</div>
                     <h3>智能消息同步</h3>
-                    <p>实时消息同步确保你的对话在所有设备上始终保持最新，再也不会丢失重要信息。</p>
+                    <p>实时消息同步确保你的对话在所有设备上始终保持最新。</p>
                 </div>
                 
                 <div class="feature">
-                    <div class="feature-icon">🧠</div>
+                    <div class="feature-icon">⚡</div>
                     <h3>记忆管理</h3>
                     <p>智能记忆功能帮助你保存和组织重要信息，通过AI辅助分类和搜索。</p>
                 </div>
@@ -610,11 +526,11 @@
                 <div class="feature">
                     <div class="feature-icon">🔒</div>
                     <h3>安全隐私</h3>
-                    <p>端到端加密保护你的数据，本地存储和自动清理确保隐私始终得到保护。</p>
+                    <p>端到端加密保护你的数据，本地存储和自动清理确保隐私得到保护。</p>
                 </div>
                 
                 <div class="feature">
-                    <div class="feature-icon">🌐</div>
+                    <div class="feature-icon">○</div>
                     <h3>离线同步</h3>
                     <p>放心离线工作，当你重新联网时，所有更改都会自动同步。</p>
                 </div>
@@ -633,31 +549,31 @@
                 
                 <div class="download-grid">
                     <a href="downloads/windows-installer.zip" class="download-btn">
-                        <div class="download-icon">🪟</div>
+                        <div class="download-icon">□</div>
                         <div class="download-label">Windows</div>
                         <div class="download-subtitle">Windows 10+</div>
                     </a>
                     
                     <a href="downloads/SendToMyself-1.0.0-macOS.dmg" class="download-btn">
-                        <div class="download-icon">💻</div>
+                        <div class="download-icon">◊</div>
                         <div class="download-label">macOS</div>
                         <div class="download-subtitle">macOS 10.13+</div>
                     </a>
                     
                     <a href="downloads/linux-appimage.zip" class="download-btn">
-                        <div class="download-icon">🐧</div>
+                        <div class="download-icon">△</div>
                         <div class="download-label">Linux</div>
                         <div class="download-subtitle">Ubuntu 18.04+</div>
                     </a>
                     
                     <a href="https://apps.apple.com/app/send-to-myself/id1234567890" class="download-btn">
-                        <div class="download-icon">🍎</div>
+                        <div class="download-icon">○</div>
                         <div class="download-label">iOS</div>
                         <div class="download-subtitle">App Store</div>
                     </a>
                     
                     <a href="https://play.google.com/store/apps/details?id=com.sendtomyself.app" class="download-btn">
-                        <div class="download-icon">📱</div>
+                        <div class="download-icon">▢</div>
                         <div class="download-label">Android</div>
                         <div class="download-subtitle">Google Play</div>
                     </a>
@@ -679,7 +595,7 @@
                 
                 <div class="author-info">
                     <strong>开发者：</strong> silong.xiong
-                    <a href="mailto:xiongsl2013@gmail.com">📧 xiongsl2013@gmail.com</a>
+                    <a href="mailto:xiongsl2013@gmail.com">xiongsl2013@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -718,7 +634,7 @@
                 nav.style.background = 'rgba(255, 255, 255, 0.95)';
                 nav.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+                nav.style.background = 'rgba(255, 255, 255, 0.9)';
                 nav.style.boxShadow = 'none';
             }
         });
@@ -741,8 +657,8 @@
         // Observe all feature cards
         document.querySelectorAll('.feature').forEach(card => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(card);
         });
     </script>
