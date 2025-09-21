@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 测试 - Send To Myself</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status {
+            background: rgba(0, 255, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00ff00;
+        }
+        .download-test {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        a {
+            color: #ffff00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 GitHub Pages 部署测试</h1>
+        
+        <div class="status">
+            <h3>✅ 部署状态：成功</h3>
+            <p>如果你能看到这个页面，说明GitHub Pages已经成功部署！</p>
+        </div>
+        
+        <h2>📁 文件结构验证</h2>
+        <ul>
+            <li>✅ index.html - 主页面</li>
+            <li>✅ privacy.html - 隐私政策</li>
+            <li>✅ downloads/ - 下载文件夹</li>
+            <li>✅ downloads/windows-installer.zip</li>
+            <li>✅ downloads/SendToMyself-1.0.0-macOS.dmg</li>
+            <li>✅ downloads/linux-appimage.zip</li>
+            <li>✅ downloads/README.md - 安装说明</li>
+        </ul>
+        
+        <div class="download-test">
+            <h3>🔗 下载链接测试</h3>
+            <p><a href="index.html">返回主页面</a></p>
+            <p><a href="downloads/README.md">查看安装说明</a></p>
+            <p><a href="downloads/windows-installer.zip">测试Windows下载</a></p>
+            <p><a href="downloads/SendToMyself-1.0.0-macOS.dmg">测试macOS下载</a></p>
+            <p><a href="downloads/linux-appimage.zip">测试Linux下载</a></p>
+        </div>
+        
+        <div class="status">
+            <h3>🌐 网站地址</h3>
+            <p>主网站：<a href="index.html">https://visionwise-nick.github.io/sendtomyself-website/</a></p>
+            <p>测试页面：<a href="test.html">https://visionwise-nick.github.io/sendtomyself-website/test.html</a></p>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; opacity: 0.8;">
+            部署时间：$(date)<br>
+            开发者：silong.xiong
+        </p>
+    </div>
+</body>
+</html>
