@@ -209,35 +209,31 @@
 
         /* Footer */
         .footer {
-            background: var(--surface-secondary);
-            border-top: 1px solid var(--border);
+            background: var(--text-primary);
+            color: var(--text-muted);
             padding: 48px 0;
-            margin-top: 80px;
+            text-align: center;
         }
 
         .footer-links {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
             margin-bottom: 24px;
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
+            margin: 0 16px;
             font-weight: 500;
-            font-size: 15px;
             transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--text-primary);
+            color: white;
         }
 
         .copyright {
-            text-align: center;
-            color: var(--text-muted);
             font-size: 14px;
+            opacity: 0.7;
         }
 
         /* Responsive */
@@ -374,11 +370,8 @@
 
             <div class="section">
                 <h2>8. Contact</h2>
-                <p>For questions about these terms:</p>
-                <ul>
-                    <li>Email: xiongsl2013@gmail.com</li>
-                    <li>Website: https://sendtomyself.app</li>
-                </ul>
+                <p>For questions about these terms, please contact us at:</p>
+                <p><strong>Email:</strong> xiongsl2013@gmail.com</p>
             </div>
         </div>
     </main>
@@ -387,12 +380,25 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+                <a href="index.html">Home</a>
                 <a href="mailto:xiongsl2013@gmail.com">Contact Us</a>
             </div>
             <p class="copyright">&copy; 2024 Send To Myself. All rights reserved. Developed by silong.xiong</p>
         </div>
     </footer>
+
+    <script>
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
