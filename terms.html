@@ -149,43 +149,62 @@
             padding: 0 0 80px;
         }
 
-        h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 48px 0 24px;
-            letter-spacing: -0.01em;
+        .section {
+            margin-bottom: 48px;
         }
 
-        h3 {
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .section h3 {
             font-size: 20px;
             font-weight: 600;
             color: var(--text-primary);
             margin: 32px 0 16px;
+            letter-spacing: -0.01em;
         }
 
-        p {
-            font-size: 16px;
-            line-height: 1.7;
+        .section p {
             color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        ul {
-            margin: 20px 0;
-            padding-left: 24px;
-        }
-
-        li {
+            margin-bottom: 16px;
             font-size: 16px;
-            line-height: 1.7;
+        }
+
+        .section ul {
+            margin: 16px 0 24px 24px;
             color: var(--text-secondary);
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .highlight-box {
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 12px;
         }
 
-        strong {
-            color: var(--text-primary);
-            font-weight: 600;
+        .highlight-box p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
 
         /* Footer */
@@ -247,14 +266,12 @@
                 font-size: 16px;
             }
 
-            h2 {
-                font-size: 24px;
-                margin: 40px 0 20px;
+            .section {
+                margin-bottom: 32px;
             }
 
-            h3 {
-                font-size: 18px;
-                margin: 24px 0 12px;
+            .highlight-box {
+                padding: 20px;
             }
 
             .footer-links {
@@ -285,108 +302,119 @@
     <section class="header">
         <div class="container">
             <h1>Terms of Use</h1>
-            <p><strong>Last updated:</strong> December 2024</p>
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <p class="subtitle">Please read these terms carefully before using Send To Myself</p>
         </div>
     </section>
 
-    <div class="container">
-        <div class="content">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By downloading, installing, or using the Send To Myself application ("App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
-            
-            <h2>2. Description of Service</h2>
-            <p>Send To Myself is a cross-device file sharing and message memory assistant application that allows users to:</p>
-            <ul>
-                <li>Share files, images, videos, and documents between devices</li>
-                <li>Store and retrieve text messages and chat history</li>
-                <li>Create and manage group collaborations</li>
-                <li>Access premium features through subscription plans</li>
-            </ul>
-            
-            <h2>3. User Accounts and Registration</h2>
-            <h3>3.1 Account Creation</h3>
-            <p>To use certain features of the App, you may need to create an account. You agree to:</p>
-            <ul>
-                <li>Provide accurate and complete information</li>
-                <li>Maintain the security of your account credentials</li>
-                <li>Notify us immediately of any unauthorized use</li>
-                <li>Be responsible for all activities under your account</li>
-            </ul>
-            
-            <h3>3.2 Account Termination</h3>
-            <p>We reserve the right to suspend or terminate your account if you violate these Terms or engage in prohibited activities.</p>
-            
-            <h2>4. Subscription Services</h2>
-            <h3>4.1 Auto-Renewable Subscriptions</h3>
-            <p>Send To Myself offers auto-renewable subscription plans with the following terms:</p>
-            <ul>
-                <li><strong>Basic Plan:</strong> Monthly ($1.99) or Yearly ($19.9) - Supports up to 5 devices</li>
-                <li><strong>Pro Plan:</strong> Monthly or Yearly - Supports up to 10 devices</li>
-                <li><strong>Enterprise Plan:</strong> Yearly - Unlimited devices</li>
-            </ul>
-            
-            <h3>4.2 Billing and Renewal</h3>
-            <ul>
-                <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
-                <li>Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period</li>
-                <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
-                <li>You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase</li>
-            </ul>
-            
-            <h3>4.3 Cancellation and Refunds</h3>
-            <p>You may cancel your subscription at any time through your Apple ID account settings. Refunds are subject to Apple's refund policy. We do not provide direct refunds.</p>
-            
-            <h2>5. Acceptable Use</h2>
-            <h3>5.1 Permitted Uses</h3>
-            <p>You may use the App to:</p>
-            <ul>
-                <li>Share files and content for personal or business purposes</li>
-                <li>Create and manage group collaborations</li>
-                <li>Access premium features according to your subscription plan</li>
-            </ul>
-            
-            <h3>5.2 Prohibited Uses</h3>
-            <p>You agree not to:</p>
-            <ul>
-                <li>Use the App for illegal or unauthorized purposes</li>
-                <li>Share malicious software, viruses, or harmful content</li>
-                <li>Violate any applicable laws or regulations</li>
-                <li>Attempt to reverse engineer or modify the App</li>
-                <li>Share content that infringes on intellectual property rights</li>
-                <li>Use the App to harass, abuse, or harm others</li>
-            </ul>
-            
-            <h2>6. Intellectual Property</h2>
-            <p>The App and its original content, features, and functionality are owned by Send To Myself and are protected by international copyright, trademark, and other intellectual property laws.</p>
-            
-            <h2>7. Privacy and Data Protection</h2>
-            <p>Your privacy is important to us. Please review our Privacy Policy, which explains how we collect, use, and protect your information when you use the App.</p>
-            
-            <h2>8. Disclaimers and Limitations</h2>
-            <h3>8.1 Service Availability</h3>
-            <p>We strive to provide reliable service but cannot guarantee uninterrupted access. The App is provided "as is" without warranties of any kind.</p>
-            
-            <h3>8.2 Limitation of Liability</h3>
-            <p>To the maximum extent permitted by law, Send To Myself shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
-            
-            <h2>9. Changes to Terms</h2>
-            <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes through the App or other appropriate means. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-            
-            <h2>10. Termination</h2>
-            <p>These Terms remain in effect until terminated by either party. You may terminate your account at any time by deleting the App and canceling any active subscriptions.</p>
-            
-            <h2>11. Governing Law</h2>
-            <p>These Terms are governed by and construed in accordance with applicable laws. Any disputes will be resolved through appropriate legal channels.</p>
-            
-            <h2>12. Contact Information</h2>
-            <p>If you have questions about these Terms, please contact us at:</p>
-            <ul>
-                <li>Email: xiongsl2013@gmail.com</li>
-                <li>Website: https://sendtomyself.app</li>
-            </ul>
+    <!-- Content -->
+    <main class="content">
+        <div class="container">
+            <div class="section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By downloading, installing, or using the Send To Myself application ("App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Description of Service</h2>
+                <p>Send To Myself is a cross-device file sharing and message memory assistant application that allows users to:</p>
+                <ul>
+                    <li>Share files, images, videos, and documents between devices</li>
+                    <li>Store and retrieve text messages and chat history</li>
+                    <li>Create and manage group collaborations</li>
+                    <li>Access premium features through subscription plans</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. User Accounts and Registration</h2>
+                <h3>3.1 Account Creation</h3>
+                <p>To use certain features of the App, you may need to create an account. You agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Notify us immediately of any unauthorized use</li>
+                    <li>Be responsible for all activities under your account</li>
+                </ul>
+
+                <h3>3.2 Account Termination</h3>
+                <p>We reserve the right to suspend or terminate your account if you violate these Terms or engage in prohibited activities.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Subscription Services</h2>
+                <h3>4.1 Auto-Renewable Subscriptions</h3>
+                <p>Send To Myself offers auto-renewable subscription plans with the following terms:</p>
+                <ul>
+                    <li><strong>Basic Plan:</strong> Monthly ($1.99) or Yearly ($19.9) - Supports up to 5 devices</li>
+                    <li><strong>Pro Plan:</strong> Monthly or Yearly - Supports up to 10 devices</li>
+                    <li><strong>Enterprise Plan:</strong> Yearly - Unlimited devices</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>💳 Billing Information</h4>
+                    <p>Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</p>
+                </div>
+
+                <h3>4.2 Cancellation and Refunds</h3>
+                <p>You may cancel your subscription at any time through your Apple ID account settings. Refunds are subject to Apple's refund policy. We do not provide direct refunds.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Acceptable Use</h2>
+                <h3>5.1 Permitted Uses</h3>
+                <p>You may use the App to:</p>
+                <ul>
+                    <li>Share files and content for personal or business purposes</li>
+                    <li>Create and manage group collaborations</li>
+                    <li>Access premium features according to your subscription plan</li>
+                </ul>
+
+                <h3>5.2 Prohibited Uses</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the App for illegal or unauthorized purposes</li>
+                    <li>Share malicious software, viruses, or harmful content</li>
+                    <li>Violate any applicable laws or regulations</li>
+                    <li>Attempt to reverse engineer or modify the App</li>
+                    <li>Share content that infringes on intellectual property rights</li>
+                    <li>Use the App to harass, abuse, or harm others</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Intellectual Property</h2>
+                <p>The App and its original content, features, and functionality are owned by Send To Myself and are protected by international copyright, trademark, and other intellectual property laws.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Privacy and Data Protection</h2>
+                <p>Your privacy is important to us. Please review our Privacy Policy, which explains how we collect, use, and protect your information when you use the App.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Disclaimers and Limitations</h2>
+                <h3>8.1 Service Availability</h3>
+                <p>We strive to provide reliable service but cannot guarantee uninterrupted access. The App is provided "as is" without warranties of any kind.</p>
+
+                <h3>8.2 Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, Send To Myself shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes through the App or other appropriate means. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Contact Information</h2>
+                <p>If you have questions about these Terms, please contact us at:</p>
+                <ul>
+                    <li>Email: xiongsl2013@gmail.com</li>
+                    <li>Website: https://sendtomyself.app</li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </main>
     
     <!-- Footer -->
     <footer class="footer">
