@@ -6,394 +6,462 @@
     <title>Privacy Policy - Send To Myself</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #000000;
+            --secondary: #6b7280;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --surface: #ffffff;
+            --surface-secondary: #f9fafb;
+            --border: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--surface);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
+
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 24px;
         }
-        
+
         /* Navigation */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
         }
-        
+
         .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            height: 72px;
         }
-        
+
         .logo {
-            font-size: 1.5rem;
+            font-size: 20px;
             font-weight: 700;
-            color: #667eea;
+            color: var(--primary);
             text-decoration: none;
+            letter-spacing: -0.02em;
         }
-        
+
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 32px;
+            align-items: center;
         }
-        
+
         .nav-links a {
-            color: #1a1a1a;
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 15px;
+            transition: var(--transition);
+            position: relative;
         }
-        
+
         .nav-links a:hover {
-            color: #667eea;
+            color: var(--text-primary);
         }
-        
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        /* Header */
+        .header {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         /* Content */
         .content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 4rem;
-            margin-top: 100px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 60px 0;
+            background: var(--surface);
         }
-        
-        header {
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 32px 0 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .section ul {
+            margin: 16px 0 24px 24px;
+            color: var(--text-secondary);
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .highlight-box {
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 32px;
             text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid #667eea;
+            margin: 48px 0;
         }
-        
-        h1 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-            font-weight: 700;
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+            border: none;
         }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 2rem 0;
-            color: #667eea;
+
+        .contact-info p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .contact-info a {
+            color: white;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 18px;
+            transition: var(--transition);
         }
-        
-        .back-link:hover {
-            transform: translateX(-5px);
+
+        .contact-info a:hover {
+            opacity: 0.8;
         }
-        
-        h2 {
-            color: #667eea;
-            margin: 3rem 0 1.5rem 0;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        
-        h3 {
-            color: #1a1a1a;
-            margin: 2rem 0 1rem 0;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        
-        p, ul {
-            margin-bottom: 1.5rem;
-            color: #333;
-            line-height: 1.8;
-        }
-        
-        ul {
-            padding-left: 2rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-        }
-        
-        .contact h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-        
-        .contact a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .contact a:hover {
-            color: #5a6fd8;
-        }
-        
+
         /* Footer */
         .footer {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 20px 20px 0 0;
-            padding: 2rem;
-            margin-top: 4rem;
+            background: var(--text-primary);
+            color: var(--text-muted);
+            padding: 48px 0;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .footer-links {
-            margin-bottom: 1rem;
+            margin-bottom: 24px;
         }
-        
+
         .footer-links a {
-            color: #667eea;
+            color: var(--text-muted);
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 16px;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
-        
+
         .footer-links a:hover {
-            color: #5a6fd8;
+            color: white;
         }
-        
+
         .copyright {
-            color: #666;
-            font-size: 0.9rem;
+            font-size: 14px;
+            opacity: 0.7;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .header {
+                padding: 100px 0 40px;
+            }
+
             .content {
-                padding: 2rem;
-                margin-top: 80px;
+                padding: 40px 0;
             }
-            
-            h1 {
-                font-size: 2rem;
+
+            .section {
+                margin-bottom: 32px;
             }
-            
-            h2 {
-                font-size: 1.5rem;
+
+            .highlight-box {
+                padding: 20px;
             }
-            
-            .nav-links {
-                display: none;
+
+            .contact-info {
+                padding: 24px;
             }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .content {
-            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="logo">Send To Myself</a>
-            <div class="nav-links">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#download">Download</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Send To Myself</a>
+                <div class="nav-links">
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#download">Download</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="content">
-            <header>
-                <h1>Privacy Policy for Send To Myself</h1>
-                <p><strong>Last updated:</strong> December 2024</p>
-                <a href="index.html" class="back-link">← Back to Home</a>
-            </header>
-            
-            <h2>Introduction</h2>
-            <p>Send To Myself ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our cross-device file sharing and message memory assistant application.</p>
-            
-            <h2>Information We Collect</h2>
-            
-            <h3>Device Information</h3>
-            <ul>
-                <li>Device ID and type</li>
-                <li>Operating system version</li>
-                <li>App version and usage statistics</li>
-            </ul>
-            
-            <h3>User Content</h3>
-            <ul>
-                <li>Files, images, videos, and documents you choose to share</li>
-                <li>Text messages and chat history</li>
-                <li>Group information and member lists</li>
-            </ul>
-            
-            <h3>Technical Data</h3>
-            <ul>
-                <li>Network connection information</li>
-                <li>App performance and crash data</li>
-                <li>Usage analytics to improve our service</li>
-            </ul>
-            
-            <h2>How We Use Your Information</h2>
-            
-            <h3>Service Provision</h3>
-            <ul>
-                <li>Enable cross-device file transfer</li>
-                <li>Synchronize messages between your devices</li>
-                <li>Manage group functionality</li>
-                <li>Provide memory management features</li>
-            </ul>
-            
-            <h3>Service Improvement</h3>
-            <ul>
-                <li>Analyze app usage patterns</li>
-                <li>Fix bugs and improve performance</li>
-                <li>Develop new features</li>
-            </ul>
-            
-            <h3>Security</h3>
-            <ul>
-                <li>Prevent fraud and abuse</li>
-                <li>Ensure service reliability</li>
-                <li>Protect user data</li>
-            </ul>
-            
-            <h2>Data Storage and Security</h2>
-            
-            <h3>Local Storage</h3>
-            <p>Files and messages are stored locally on your devices. We do not permanently store your content on our servers.</p>
-            
-            <h3>Temporary Server Storage</h3>
-            <ul>
-                <li>Files are temporarily stored during transfer between devices</li>
-                <li>Messages are cached for synchronization purposes</li>
-                <li>All data is automatically deleted after successful transfer</li>
-            </ul>
-            
-            <h3>Security Measures</h3>
-            <ul>
-                <li>End-to-end encryption for file transfers</li>
-                <li>Secure WebSocket connections</li>
-                <li>Regular security audits</li>
-            </ul>
-            
-            <h2>Data Sharing</h2>
-            <p>We do not sell, trade, or otherwise transfer your personal information to third parties, except:</p>
-            <ul>
-                <li>When required by law</li>
-                <li>To protect our rights and safety</li>
-                <li>With your explicit consent</li>
-            </ul>
-            
-            <h2>Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access your personal data</li>
-                <li>Request deletion of your data</li>
-                <li>Opt out of data collection</li>
-                <li>Contact us with privacy concerns</li>
-            </ul>
-            
-            <h2>Children's Privacy</h2>
-            <p>Our service is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
-            
-            <h2>Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-            
-            <div class="contact">
-                <h2>Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">We value your privacy and this policy details how we collect, use, and protect your information</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="content">
+        <div class="container">
+            <div class="section">
+                <h2>Information Collection</h2>
+                <p>Send To Myself is committed to protecting your privacy. We only collect information that is necessary to provide quality service:</p>
+                
+                <h3>Types of Information We Collect</h3>
                 <ul>
-                    <li>Email: <a href="mailto:xiongsl2013@gmail.com">xiongsl2013@gmail.com</a></li>
-                    <li>Developer: silong.xiong</li>
+                    <li><strong>Device Information:</strong> Device type, operating system version, app version</li>
+                    <li><strong>Usage Data:</strong> App feature usage, performance data</li>
+                    <li><strong>File Metadata:</strong> File names, sizes, types (excluding file content)</li>
+                    <li><strong>Network Information:</strong> IP address, connection status</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>🔒 Important Notice</h4>
+                    <p>We do <strong>NOT</strong> collect or store your file content, personal messages, or sensitive information. All file transfers occur directly between your devices.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Information Usage</h2>
+                <p>The information we collect is used only for the following purposes:</p>
+                
+                <h3>Service Provision</h3>
+                <ul>
+                    <li>Provide cross-device file synchronization functionality</li>
+                    <li>Optimize app performance and stability</li>
+                    <li>Provide customer support services</li>
+                    <li>Ensure secure app operation</li>
+                </ul>
+
+                <h3>Service Improvement</h3>
+                <ul>
+                    <li>Analyze usage patterns to improve user experience</li>
+                    <li>Develop new features and capabilities</li>
+                    <li>Fix technical issues and bugs</li>
                 </ul>
             </div>
-            
-            <h2>Data Collection Summary</h2>
-            
-            <h3>Data We Collect</h3>
-            <ul>
-                <li>Device information for service functionality</li>
-                <li>User-generated content (files, messages) for cross-device transfer</li>
-                <li>Usage analytics for app improvement</li>
-            </ul>
-            
-            <h3>How We Use Data</h3>
-            <ul>
-                <li>Provide core file sharing and messaging services</li>
-                <li>Improve app performance and user experience</li>
-                <li>Ensure service security and reliability</li>
-            </ul>
-            
-            <h3>Data Retention</h3>
-            <ul>
-                <li>Local data: Stored on your devices</li>
-                <li>Server data: Automatically deleted after transfer</li>
-                <li>Analytics: Anonymized and retained for service improvement</li>
-            </ul>
-            
-            <h3>Third-Party Sharing</h3>
-            <ul>
-                <li>No data sold to third parties</li>
-                <li>No advertising partnerships</li>
-                <li>No analytics sharing with external parties</li>
-            </ul>
+
+            <div class="section">
+                <h2>Data Security</h2>
+                <p>We employ industry-standard security measures to protect your information:</p>
+                
+                <ul>
+                    <li><strong>End-to-End Encryption:</strong> All data transmission is encrypted</li>
+                    <li><strong>Local Storage:</strong> Sensitive data is prioritized for local device storage</li>
+                    <li><strong>Minimum Permission Principle:</strong> Only request permissions necessary for app operation</li>
+                    <li><strong>Regular Security Updates:</strong> Continuously update security measures and protocols</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>🛡️ Security Assurance</h4>
+                    <p>We use advanced security technologies including SSL/TLS encryption, data anonymization, and access controls to ensure your information security.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Information Sharing</h2>
+                <p>We are committed to not selling, trading, or otherwise transferring your personal information to third parties, except when:</p>
+                
+                <ul>
+                    <li>We have your explicit consent</li>
+                    <li>Required by law or court order</li>
+                    <li>Protecting our rights, property, or security</li>
+                    <li>Working with trusted service providers (under strict confidentiality agreements)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Your Rights</h2>
+                <p>You have the following rights regarding your personal information:</p>
+                
+                <ul>
+                    <li><strong>Access Right:</strong> View information we hold about you</li>
+                    <li><strong>Correction Right:</strong> Correct inaccurate or incomplete information</li>
+                    <li><strong>Deletion Right:</strong> Request deletion of your personal information</li>
+                    <li><strong>Restriction Right:</strong> Restrict our processing of your information</li>
+                    <li><strong>Data Portability:</strong> Receive your data in a structured format</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Cookies and Tracking Technologies</h2>
+                <p>Our website may use cookies and similar technologies to:</p>
+                
+                <ul>
+                    <li>Remember your preference settings</li>
+                    <li>Analyze website usage</li>
+                    <li>Provide personalized experience</li>
+                </ul>
+                
+                <p>You can control cookie usage through your browser settings.</p>
+            </div>
+
+            <div class="section">
+                <h2>Children's Privacy</h2>
+                <p>Our service is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we discover we have collected such information, we will delete it immediately.</p>
+            </div>
+
+            <div class="section">
+                <h2>Policy Updates</h2>
+                <p>We may update this privacy policy from time to time. Significant changes will be communicated through in-app notifications or email. Continued use of our service indicates your acceptance of the updated policy.</p>
+                
+                <p><strong>Last Updated:</strong> September 21, 2024</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about this privacy policy or need to exercise your rights, please feel free to contact us:</p>
+                <a href="mailto:xiongsl2013@gmail.com">📧 xiongsl2013@gmail.com</a>
+            </div>
         </div>
-    </div>
-    
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:xiongsl2013@gmail.com">Contact</a>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="mailto:xiongsl2013@gmail.com">Contact Us</a>
+            </div>
+            <p class="copyright">&copy; 2024 Send To Myself. All rights reserved. Developed by silong.xiong</p>
         </div>
-        <p class="copyright">&copy; 2024 Send To Myself. All rights reserved. Developed by silong.xiong</p>
     </footer>
+
+    <script>
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 1px 3px 0 rgb(0 0 0 / 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
-</html> 
+</html>
